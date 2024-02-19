@@ -13,9 +13,9 @@ class GamesController < ApplicationController
     final_word = JSON.parse(word.read)
 
     if final_word["found"]
-      @answer = "Congratulations! #{input} is a correct word"
+      @answer = "Congratulations! #{input.upcase} is a valid English word"
     else
-      @answer = "Wrong"
+      @answer = "Sorry but #{input.upcase} doesn't seem to be an English word"
     end
   end
 end
